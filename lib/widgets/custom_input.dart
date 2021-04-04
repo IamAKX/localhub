@@ -326,14 +326,36 @@ buildBorderedInputFieldByType(
     cursorColor: BUTTON_BLACK,
     decoration: new InputDecoration(
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey[500], width: 1.0),
+          borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+          borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
         ),
         labelText: label,
         labelStyle: GoogleFonts.openSans(
-          color: Colors.grey,
+          color: HINT_COLOR,
+        )),
+  );
+}
+
+buildBorderedInputFieldByTypeWithPrefixText(
+    String label, TextInputType type, TextEditingController controller, String prefix) {
+  return TextField(
+    controller: controller,
+    keyboardType: type,
+    autocorrect: true,
+    cursorColor: BUTTON_BLACK,
+    decoration: new InputDecoration(
+      prefixText: prefix,
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
+        ),
+        labelText: label,
+        labelStyle: GoogleFonts.openSans(
+          color: HINT_COLOR,
         )),
   );
 }
@@ -351,10 +373,10 @@ buildBorderedInputFieldByTypeWithSuffixIcon(
     cursorColor: BUTTON_BLACK,
     decoration: new InputDecoration(
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey[500], width: 1.0),
+        borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
       ),
       suffix: InkWell(
         child: Icon(suffixIcon),
@@ -362,7 +384,7 @@ buildBorderedInputFieldByTypeWithSuffixIcon(
       ),
       labelText: label,
       labelStyle: GoogleFonts.openSans(
-        color: Colors.grey,
+        color: HINT_COLOR,
       ),
     ),
   );
@@ -382,10 +404,10 @@ buildPasswordOutlineInputField(
     cursorColor: BUTTON_BLACK,
     decoration: new InputDecoration(
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey[500], width: 1.0),
+        borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
       ),
       suffix: InkWell(
         child: Icon(
@@ -396,7 +418,7 @@ buildPasswordOutlineInputField(
       ),
       labelText: label,
       labelStyle: GoogleFonts.openSans(
-        color: Colors.grey,
+        color: HINT_COLOR,
       ),
     ),
   );

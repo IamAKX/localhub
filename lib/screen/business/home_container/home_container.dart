@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:localhub/config/colors.dart';
+import 'package:localhub/screen/business/add_product/add_product.dart';
 import 'package:localhub/screen/business/home/home.dart';
 import 'package:localhub/screen/business/notification/notification.dart';
 import 'package:localhub/screen/business/ratings/ratings.dart';
@@ -16,7 +17,7 @@ class _BusinessHomeContainerState extends State<BusinessHomeContainer> {
   List<Widget> _children = [
     BusinessHome(),
     BusinessRatings(),
-    Container(),
+    AddProduct(),
     Container(),
     BusinessNotification(),
   ];
