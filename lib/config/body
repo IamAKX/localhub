@@ -1,0 +1,11 @@
+body() {
+    return Container(
+      padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 10),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/colud_background.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
