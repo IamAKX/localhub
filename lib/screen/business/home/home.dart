@@ -31,7 +31,9 @@ class _BusinessHomeState extends State<BusinessHome> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                showAccountsBottomSheet(context);
+              },
               child: Icon(Icons.keyboard_arrow_down_outlined),
             )
           ],
@@ -167,5 +169,111 @@ class _BusinessHomeState extends State<BusinessHome> {
         ),
       ),
     );
+  }
+
+  void showAccountsBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        builder: (builder) {
+          return Wrap(
+            children: [
+              new Container(
+                width: double.infinity,
+                decoration: new BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: new BorderRadius.only(
+                    topLeft: const Radius.circular(10.0),
+                    topRight: const Radius.circular(10.0),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.keyboard_arrow_up_outlined),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 25,
+                        backgroundImage:
+                            AssetImage('assets/images/user_dummy_1.png'),
+                      ),
+                      title: Text(
+                        'Craig Kenter',
+                        style: GoogleFonts.openSans(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                    Divider(
+                      color: BORDER_GREY,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 25,
+                        backgroundImage:
+                            AssetImage('assets/images/user_dummy_2.png'),
+                      ),
+                      title: Text(
+                        'Leo Dias',
+                        style: GoogleFonts.openSans(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,
+                          color: HINT_COLOR,
+                        ),
+                      ),
+                    ),
+                    Divider(
+                      color: BORDER_GREY,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 25,
+                        backgroundImage:
+                            AssetImage('assets/images/user_dummy_3.png'),
+                      ),
+                      title: Text(
+                        'Sultan Sweets',
+                        style: GoogleFonts.openSans(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,
+                          color: HINT_COLOR,
+                        ),
+                      ),
+                    ),
+                    Divider(
+                      color: BORDER_GREY,
+                    ),
+                    ListTile(
+                      onTap: () {},
+                      trailing: Icon(Icons.chevron_right),
+                      title: Text(
+                        'Add Account',
+                        style: GoogleFonts.openSans(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                    Divider(
+                      color: BORDER_GREY,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
   }
 }

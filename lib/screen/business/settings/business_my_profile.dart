@@ -85,11 +85,6 @@ class _BusinessMyProfileState extends State<BusinessMyProfile> {
             SizedBox(
               height: 10,
             ),
-            buildBorderedInputFieldByType(
-                'Date of Birth', TextInputType.datetime, null),
-            SizedBox(
-              height: 10,
-            ),
             buildBorderedInputFieldByType('Address', TextInputType.text, null),
             SizedBox(
               height: 10,
