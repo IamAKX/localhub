@@ -39,7 +39,9 @@ class _BusinessHomeState extends State<BusinessHome> {
         actions: [
           IconButton(
             icon: Icon(LineAwesomeIcons.gear),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('/business/profileSettings');
+            },
           ),
         ],
       ),

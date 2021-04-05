@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:localhub/screen/account_type/account_type.dart';
 import 'package:localhub/screen/basket/basket.dart';
 import 'package:localhub/screen/business/home_container/home_container.dart';
+import 'package:localhub/screen/business/settings/business_change_password.dart';
+import 'package:localhub/screen/business/settings/business_my_profile.dart';
+import 'package:localhub/screen/business/settings/business_settings.dart';
 import 'package:localhub/screen/category/category_stores.dart';
 import 'package:localhub/screen/category/item_details.dart';
 import 'package:localhub/screen/category/store_items.dart';
@@ -67,6 +70,12 @@ class NavRoute {
             builder: (_) => SpinningResult(settings.arguments));
       case '/business/home':
         return MaterialPageRoute(builder: (_) => BusinessHomeContainer());
+      case '/business/profileSettings':
+        return MaterialPageRoute(builder: (_) => BusinessProfileSettings());
+      case '/business/myprofile':
+        return MaterialPageRoute(builder: (_) => BusinessMyProfile());
+      case '/business/changePassword':
+        return MaterialPageRoute(builder: (_) => BusinessChangePassword());
       default:
         return _errorRoute();
     }

@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:localhub/config/colors.dart';
 import 'package:localhub/config/static_data.dart';
+import 'package:localhub/widgets/text_border.dart';
 import 'package:multi_select_flutter/chip_display/multi_select_chip_display.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
@@ -105,6 +106,33 @@ buildImagePickerInput(
         ),
       ),
     ],
+  );
+}
+
+buildImagePickerInputWithFloatingLabel(
+    String label, Function() getImage, Function() getFileName) {
+  return TextBorder(
+    borderColors: BORDER_GREY,
+    text: Text(
+      label,
+      style: TextStyle(
+        color: HINT_COLOR,
+        fontSize: 14,
+      ),
+    ),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(getFileName()),
+        IconButton(
+          icon: Icon(Icons.add_photo_alternate_rounded),
+          onPressed: () {
+            getImage();
+          },
+        )
+      ],
+    ),
   );
 }
 
@@ -338,15 +366,15 @@ buildBorderedInputFieldByType(
   );
 }
 
-buildBorderedInputFieldByTypeWithPrefixText(
-    String label, TextInputType type, TextEditingController controller, String prefix) {
+buildBorderedInputFieldByTypeWithPrefixText(String label, TextInputType type,
+    TextEditingController controller, String prefix) {
   return TextField(
     controller: controller,
     keyboardType: type,
     autocorrect: true,
     cursorColor: BUTTON_BLACK,
     decoration: new InputDecoration(
-      prefixText: prefix,
+        prefixText: prefix,
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: BORDER_GREY, width: 1.0),
         ),
