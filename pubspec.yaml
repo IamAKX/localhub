@@ -34,6 +34,7 @@ dependencies:
   chips_choice: ^2.0.1
   story_view: ^0.12.8
   flutter_spinning_wheel: ^1.1.0
+  badges: ^1.2.0
 
 dev_dependencies:
   flutter_test:

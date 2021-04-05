@@ -4,6 +4,7 @@ import 'package:localhub/config/colors.dart';
 import 'package:localhub/screen/business/add_product/add_product.dart';
 import 'package:localhub/screen/business/home/home.dart';
 import 'package:localhub/screen/business/notification/notification.dart';
+import 'package:localhub/screen/business/order_status/order_status.dart';
 import 'package:localhub/screen/business/ratings/ratings.dart';
 import 'package:localhub/screen/ratings/view_ratings.dart';
 
@@ -18,7 +19,7 @@ class _BusinessHomeContainerState extends State<BusinessHomeContainer> {
     BusinessHome(),
     BusinessRatings(),
     AddProduct(),
-    Container(),
+    BusinessOrderStatus(),
     BusinessNotification(),
   ];
 

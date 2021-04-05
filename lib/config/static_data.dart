@@ -2,6 +2,7 @@ import 'package:localhub/model/category_model.dart';
 import 'package:localhub/model/category_store_model.dart';
 import 'package:localhub/model/dummy_user_model.dart';
 import 'package:localhub/model/item_model.dart';
+import 'package:localhub/model/order_model.dart';
 
 String LOREM_TITLE = 'Lorem ipsum dolor';
 String LOREM_BODY =
@@ -142,5 +143,58 @@ List<DummyUser> getDummyUserModel() {
     DummyUser(name: 'Tiana Stanton', image: 'assets/images/user_dummy_4.png'),
     DummyUser(name: 'Angel Vetrovs', image: 'assets/images/user_dummy_5.png'),
     DummyUser(name: 'Hanna Septimus', image: 'assets/images/user_dummy_6.png'),
+  ];
+}
+
+List<OrderModel> getOrderList() {
+  return [
+    OrderModel(
+        orderNumber: '123',
+        orderTimestamp: '1/3/2021 4:20 PM',
+        customerName: 'Pritesh Sudra',
+        isAccepted: 'N',
+        totalAmount: '100.00',
+        totalQuantity: '2',
+        status: 'Not Accepted'),
+    OrderModel(
+        orderNumber: '314',
+        orderTimestamp: '1/3/2021 4:20 PM',
+        customerName: 'Gretchen Aminoff',
+        isAccepted: 'Y',
+        totalAmount: '130.00',
+        totalQuantity: '130',
+        status: 'Not Accepted'),
+    OrderModel(
+        orderNumber: '751',
+        orderTimestamp: '1/3/2021 4:20 PM',
+        customerName: 'Leo Passaquindici Arcand',
+        isAccepted: 'Y',
+        totalAmount: '313.00',
+        totalQuantity: '431',
+        status: 'Pending'),
+    OrderModel(
+        orderNumber: '987',
+        orderTimestamp: '1/3/2021 4:20 PM',
+        customerName: 'Lydia Herwitz',
+        isAccepted: 'Y',
+        totalAmount: '121.00',
+        totalQuantity: '987',
+        status: 'Processing'),
+    OrderModel(
+        orderNumber: '542',
+        orderTimestamp: '1/3/2021 4:20 PM',
+        customerName: 'Jaxson Siphron',
+        isAccepted: 'Y',
+        totalAmount: '89.00',
+        totalQuantity: '231',
+        status: 'Ontheway'),
+    OrderModel(
+        orderNumber: '752',
+        orderTimestamp: '1/3/2021 4:20 PM',
+        customerName: 'Jaxson Siphron',
+        isAccepted: 'Y',
+        totalAmount: '631.00',
+        totalQuantity: '542',
+        status: 'Delivered'),
   ];
 }
