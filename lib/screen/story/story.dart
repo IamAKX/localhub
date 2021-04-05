@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:story_view/controller/story_controller.dart';
-import 'package:story_view/utils.dart';
-import 'package:story_view/widgets/story_view.dart';
+import 'package:story_view/story_view.dart';
 
 class Story extends StatefulWidget {
   @override
@@ -9,39 +7,30 @@ class Story extends StatefulWidget {
 }
 
 class _StoryState extends State<Story> {
-  final controller = StoryController();
-
   @override
   Widget build(BuildContext context) {
     List<StoryItem> storyItems = [
       StoryItem.inlineImage(
-          url:
-              'https://image.ibb.co/cU4WGx/Omotuo-Groundnut-Soup-braperucci-com-1.jpg',
-          caption: null,
-          controller: controller),
+        NetworkImage(
+            'https://image.ibb.co/cU4WGx/Omotuo-Groundnut-Soup-braperucci-com-1.jpg'),
+      ),
       StoryItem.inlineImage(
-          url:
-              'https://image.ibb.co/cU4WGx/Omotuo-Groundnut-Soup-braperucci-com-1.jpg',
-          caption: null,
-          controller: controller),
+        NetworkImage(
+            'https://images.unsplash.com/photo-1611657365907-1ca5d9799f59?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZCUyMHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80'),
+      ),
       StoryItem.inlineImage(
-          url:
-              'https://image.ibb.co/cU4WGx/Omotuo-Groundnut-Soup-braperucci-com-1.jpg',
-          caption: null,
-          controller: controller),
+        NetworkImage(
+            'https://image.ibb.co/cU4WGx/Omotuo-Groundnut-Soup-braperucci-com-1.jpg'),
+      ),
     ]; // your list of stories
     return Scaffold(
+      backgroundColor: Colors.black,
       body: StoryView(
-        controller: controller,
-        storyItems: storyItems,
+        storyItems,
+        inline: true,
         progressPosition: ProgressPosition.top,
         repeat: false,
         onComplete: () => Navigator.of(context).pop(),
-        onVerticalSwipeComplete: (direction) {
-          if (direction == Direction.down) {
-            Navigator.pop(context);
-          }
-        },
       ),
     );
   }
