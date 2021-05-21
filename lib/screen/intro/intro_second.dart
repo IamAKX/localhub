@@ -27,34 +27,31 @@ class _IntroSecondState extends State<IntroSecond> {
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          Hero(
-            tag: 'info_tag',
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  height: 40,
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                'This platform is created to support local businesses',
+                style: GoogleFonts.openSans(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
-                Text(
-                  'This platform is created to support local businesses',
-                  style: GoogleFonts.openSans(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                  textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'هذه المنصة صنعت لدعم المشاريع الإماراتية',
+                style: GoogleFonts.openSans(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'هذه المنصة صنعة لدعم المشاريع الإماراتية',
-                  style: GoogleFonts.openSans(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           Spacer(),
           FlatButton(

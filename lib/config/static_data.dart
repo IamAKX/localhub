@@ -42,42 +42,6 @@ List<CategoryModel> getCategoryList() {
         name: 'Jewelry', image: 'assets/images/category/jewllery.png'),
     CategoryModel(name: 'Arts', image: 'assets/images/category/arts.png'),
     CategoryModel(name: 'Flowers', image: 'assets/images/category/flowers.png'),
-    CategoryModel(
-        name: 'Desserts', image: 'assets/images/category/dessert.png'),
-    CategoryModel(name: 'Dresses', image: 'assets/images/category/dresses.png'),
-    CategoryModel(name: 'Food', image: 'assets/images/category/food.png'),
-    CategoryModel(name: 'Abaya', image: 'assets/images/category/abaya.png'),
-    CategoryModel(
-        name: 'Accessories', image: 'assets/images/category/accessories.png'),
-    CategoryModel(
-        name: 'Mkhsweer', image: 'assets/images/category/mkhaweer.png'),
-    CategoryModel(name: 'Clothes', image: 'assets/images/category/clothes.png'),
-    CategoryModel(
-        name: 'Houseware', image: 'assets/images/category/houseware.png'),
-    CategoryModel(
-        name: 'Fragrances', image: 'assets/images/category/fragnances.png'),
-    CategoryModel(
-        name: 'Jewelry', image: 'assets/images/category/jewllery.png'),
-    CategoryModel(name: 'Arts', image: 'assets/images/category/arts.png'),
-    CategoryModel(name: 'Flowers', image: 'assets/images/category/flowers.png'),
-    CategoryModel(
-        name: 'Desserts', image: 'assets/images/category/dessert.png'),
-    CategoryModel(name: 'Dresses', image: 'assets/images/category/dresses.png'),
-    CategoryModel(name: 'Food', image: 'assets/images/category/food.png'),
-    CategoryModel(name: 'Abaya', image: 'assets/images/category/abaya.png'),
-    CategoryModel(
-        name: 'Accessories', image: 'assets/images/category/accessories.png'),
-    CategoryModel(
-        name: 'Mkhsweer', image: 'assets/images/category/mkhaweer.png'),
-    CategoryModel(name: 'Clothes', image: 'assets/images/category/clothes.png'),
-    CategoryModel(
-        name: 'Houseware', image: 'assets/images/category/houseware.png'),
-    CategoryModel(
-        name: 'Fragrances', image: 'assets/images/category/fragnances.png'),
-    CategoryModel(
-        name: 'Jewelry', image: 'assets/images/category/jewllery.png'),
-    CategoryModel(name: 'Arts', image: 'assets/images/category/arts.png'),
-    CategoryModel(name: 'Flowers', image: 'assets/images/category/flowers.png'),
   ];
 }
 

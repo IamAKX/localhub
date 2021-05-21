@@ -37,112 +37,234 @@ class _CategoryStoreState extends State<CategoryStore> {
           fit: BoxFit.cover,
         ),
       ),
-      child: GridView.count(
-        crossAxisCount: 3,
-        childAspectRatio: 0.5,
-        children: List.generate(
-          getCategoryStore().length,
-          (index) => Container(
-            margin: EdgeInsets.all(3),
-            child: Column(
-              children: [
-                Container(
-                  color: Colors.transparent,
-                  height: 140,
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 20),
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              getCategoryStore().elementAt(index).image,
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      CustomAvatars()
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(4),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 0.1,
-                          offset: Offset(0.0, 1),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          width: width,
-                          padding: EdgeInsets.all(8),
-                          child: Text(
-                            getCategoryStore().elementAt(index).name.trim(),
-                            // maxLines: 2,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Spacer(),
-                        RatingBar.builder(
-                          initialRating:
-                              getCategoryStore().elementAt(index).rating,
-                          minRating: 1,
-                          itemSize: 15,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                          itemBuilder: (context, _) => Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                          onRatingUpdate: (rating) {
-                            print(rating);
-                          },
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context).pushNamed('/storeItem',
-                                arguments: getCategoryStore()
-                                    .elementAt(index)
-                                    .name
-                                    .trim());
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 8),
-                            decoration: BoxDecoration(
-                              color: BUTTON_BLACK,
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: Text(
-                              'View Store',
-                              style: GoogleFonts.openSans(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                      ],
-                    ),
-                  ),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(4),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 0.1,
+                  offset: Offset(0.0, 1),
                 ),
               ],
             ),
+            child: Row(
+              children: [
+                for (var i = 3; i <= 5; i++) ...{
+                  getStoreTopCard(i),
+                }
+              ],
+            ),
           ),
-        ),
+          getStoreGrid(),
+        ],
+      ),
+    );
+  }
+
+  GridView getStoreGrid() {
+    return GridView.count(
+      shrinkWrap: true,
+      crossAxisCount: 3,
+      childAspectRatio: 0.55,
+      children: List.generate(
+        3,
+        (index) => getStoreCard(index),
+      ),
+    );
+  }
+
+  Container getStoreCard(int index) {
+    return Container(
+      margin: EdgeInsets.all(3),
+      child: Column(
+        children: [
+          Container(
+            color: Colors.transparent,
+            height: 140,
+            child: Stack(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        getCategoryStore().elementAt(index).image,
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                CustomAvatars()
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(4),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 0.1,
+                    offset: Offset(0.0, 1),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    width: width,
+                    padding: EdgeInsets.all(8),
+                    child: Text(
+                      getCategoryStore().elementAt(index).name.trim(),
+                      // maxLines: 2,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Spacer(),
+                  // RatingBar.builder(
+                  //   initialRating: getCategoryStore().elementAt(index).rating,
+                  //   minRating: 1,
+                  //   itemSize: 15,
+                  //   direction: Axis.horizontal,
+                  //   allowHalfRating: true,
+                  //   itemCount: 5,
+                  //   itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                  //   itemBuilder: (context, _) => Icon(
+                  //     Icons.star,
+                  //     color: Colors.amber,
+                  //   ),
+                  //   onRatingUpdate: (rating) {
+                  //     print(rating);
+                  //   },
+                  // ),
+
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/storeItem',
+                          arguments:
+                              getCategoryStore().elementAt(index).name.trim());
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: BUTTON_BLACK,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        'View Store',
+                        style: GoogleFonts.openSans(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container getStoreTopCard(int index) {
+    return Container(
+      height: 270,
+      width: width - 6,
+      margin: EdgeInsets.all(3),
+      child: Column(
+        children: [
+          Container(
+            color: Colors.transparent,
+            height: 140,
+            child: Stack(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        getCategoryStore().elementAt(index).image,
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                CustomAvatars()
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    width: width,
+                    padding: EdgeInsets.all(8),
+                    child: Text(
+                      getCategoryStore().elementAt(index).name.trim(),
+                      // maxLines: 2,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Spacer(),
+                  RatingBar.builder(
+                    initialRating: getCategoryStore().elementAt(index).rating,
+                    minRating: 1,
+                    itemSize: 15,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                    itemBuilder: (context, _) => Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    onRatingUpdate: (rating) {
+                      print(rating);
+                    },
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/storeItem',
+                          arguments:
+                              getCategoryStore().elementAt(index).name.trim());
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: BUTTON_BLACK,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        'View Store',
+                        style: GoogleFonts.openSans(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

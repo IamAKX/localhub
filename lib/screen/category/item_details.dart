@@ -41,10 +41,13 @@ class _ItemDetailsState extends State<ItemDetails> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 10),
               children: [
-                Image.asset(
-                  widget.item.image,
-                  fit: BoxFit.cover,
-                  height: 300,
+                Hero(
+                  tag: widget.item,
+                  child: Image.asset(
+                    widget.item.image,
+                    fit: BoxFit.cover,
+                    height: 300,
+                  ),
                 ),
                 SizedBox(
                   height: 10,

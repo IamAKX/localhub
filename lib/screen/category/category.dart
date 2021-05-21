@@ -22,6 +22,7 @@ class _CategoryState extends State<Category> {
         crossAxisCount: 3,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        childAspectRatio: 0.8,
         children: List.generate(
           getCategoryList().length,
           (index) => InkWell(

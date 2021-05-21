@@ -34,34 +34,31 @@ class _IntroFirstState extends State<IntroFirst> {
           fit: BoxFit.cover,
         ),
       ),
-      child: Hero(
-        tag: 'info_tag',
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              height: 20,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'This platform is created to support local businesses',
+            style: GoogleFonts.openSans(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
             ),
-            Text(
-              'This platform is created to support local businesses',
-              style: GoogleFonts.openSans(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-              textAlign: TextAlign.center,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'هذه المنصة صنعة لدعم المشاريع الإماراتية',
+            style: GoogleFonts.openSans(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              'هذه المنصة صنعة لدعم المشاريع الإماراتية',
-              style: GoogleFonts.openSans(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

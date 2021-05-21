@@ -96,10 +96,13 @@ class _StoreItemsState extends State<StoreItems> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset(
-                            getItemModel().elementAt(index).image,
-                            width: double.infinity,
-                            fit: BoxFit.fill,
+                          Hero(
+                            tag: getItemModel().elementAt(index),
+                            child: Image.asset(
+                              getItemModel().elementAt(index).image,
+                              width: double.infinity,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           Container(
                             padding: EdgeInsets.symmetric(
