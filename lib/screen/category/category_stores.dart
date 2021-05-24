@@ -129,7 +129,8 @@ class _CategoryStoreState extends State<CategoryStore> {
                   Spacer(),
                   // RatingBar.builder(
                   //   initialRating: getCategoryStore().elementAt(index).rating,
-                  //   minRating: 1,
+                  //   minRating:+;=.-, p0mn98bihttps://drive.google.com/file/d/1MmHOehqyhDWAvhGOL5ZMFAXrm__qbtzJ/view?usp=sharingojk»
+                  //   minRating:+;=.-, p0mn98bihttps://drive.google.com/file/d/1MmHOehqyhDWAvhGOL5ZMFAXrm__qbtzJ/view?usp=sharingojk»
                   //   itemSize: 15,
                   //   direction: Axis.horizontal,
                   //   allowHalfRating: true,

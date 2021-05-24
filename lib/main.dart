@@ -1,11 +1,9 @@
 import 'package:country_code_picker/country_localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinning_wheel/flutter_spinning_wheel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:localhub/config/colors.dart';
 import 'package:localhub/screen/home_container/home_container.dart';
 import 'package:localhub/screen/intro/intro_first.dart';
-import 'package:localhub/screen/spinning_wheel/spinning_wheel.dart';
 
 import 'config/navigator.dart';
 
@@ -31,8 +29,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/spinningWheel',
-      home: LuckySpinningWheel(),
+      initialRoute: '/',
+      home: IntroFirst(),
     );
   }
 }
