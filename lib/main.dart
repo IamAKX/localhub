@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:localhub/config/colors.dart';
 import 'package:localhub/screen/home_container/home_container.dart';
 import 'package:localhub/screen/intro/intro_first.dart';
+import 'package:localhub/widgets/video_splash.dart';
 
 import 'config/navigator.dart';
 
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
-      home: IntroFirst(),
+      initialRoute: '/splash',
+      home: VideoSplash(),
     );
   }
 }

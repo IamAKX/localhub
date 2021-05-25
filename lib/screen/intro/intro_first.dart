@@ -17,6 +17,8 @@ class _IntroFirstState extends State<IntroFirst> {
     startTime();
   }
 
+  int delay = 5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

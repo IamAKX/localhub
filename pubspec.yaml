@@ -36,13 +36,14 @@ dependencies:
   multi_select_flutter: ^3.1.8
   story_view: ^0.9.1
   confetti: ^0.5.5
+  video_player: ^2.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^1.0.3
 flutter_native_splash:
-  image: assets/images/splash.png
+  image: assets/images/splash_1.jpg
   color: "FFFFFF"
   android_disable_fullscreen: true
   fill: true
@@ -64,6 +65,7 @@ flutter:
     - assets/images/category/
     - assets/images/shop/
     - assets/images/item_images/
+    - assets/video/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -22,6 +22,7 @@ import 'package:localhub/screen/ratings/view_ratings.dart';
 import 'package:localhub/screen/spinning_wheel/spinning_result.dart';
 import 'package:localhub/screen/spinning_wheel/spinning_wheel.dart';
 import 'package:localhub/screen/story/story.dart';
+import 'package:localhub/widgets/video_splash.dart';
 
 class NavRoute {
   static Route<dynamic> generatedRoute(RouteSettings settings) {
@@ -76,6 +77,8 @@ class NavRoute {
         return MaterialPageRoute(builder: (_) => BusinessMyProfile());
       case '/business/changePassword':
         return MaterialPageRoute(builder: (_) => BusinessChangePassword());
+      case '/splash':
+        return MaterialPageRoute(builder: (_) => VideoSplash());
       default:
         return _errorRoute();
     }
